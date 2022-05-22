@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         // add hardcoded items to grocery list
         items = new ArrayList<>();
-        items.add("Apple");
-        items.add("Banana");
-        items.add("Orange");
-        items.add("Strawberry");
+        items.add("Manzana");
+        items.add("Platano");
+        items.add("Naranja");
+        items.add("Fresa");
         items.add("Kiwi");
 
         listView.setLongClickable(true);
