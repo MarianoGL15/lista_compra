@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String text = input.getText().toString();
                 if (text == null || text.length() == 0) {
-                    makeToast("Enter an item.");
+                    makeToast("Introduce un artículo");
                 } else {
                     addItem(text);
                     input.setText("");
-                    makeToast("Added " + text);
+                    makeToast("Artículo añadido " + text);
                 }
             }
         });
