@@ -35,13 +35,16 @@ public class MainActivity extends AppCompatActivity {
         enter = findViewById(R.id.add);
         context = getApplicationContext();
 
+
         // add hardcoded items to grocery list
         items = new ArrayList<>();
+        /*
         items.add("Manzana");
         items.add("Platano");
         items.add("Naranja");
         items.add("Fresa");
         items.add("Kiwi");
+        */
 
         listView.setLongClickable(true);
         adapter = new ListViewAdapter(this, items);
@@ -74,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     addItem(text);
                     input.setText("");
-                    makeToast("Artículo añadido " + text);
+                    makeToast(text + " añadido a la lista");
                 }
             }
         });
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     // function to remove an item given its index in the grocery list.
     public static void removeItem(int i) {
-        makeToast("Removed: " + items.get(i));
+        makeToast( items.get(i) + " Eliminado");
         items.remove(i);
         listView.setAdapter(adapter);
     }
