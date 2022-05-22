@@ -9,15 +9,19 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:background="#F1FEFF">
+        android:background="#E46B40B6">
 
         <EditText
             android:id="@+id/input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:backgroundTint="#916bd2"
             android:ems="10"
-            android:hint="Introduce un artículo" />
+            android:hint="Introduce un artículo"
+            android:textColor="#fff"
+            android:textColorHint="#5EFFFFFF"
+            android:textCursorDrawable="@drawable/cursor" />
 
         <ImageView
             android:id="@+id/add"
