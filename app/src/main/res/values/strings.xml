@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Tu lista de la compra</string>
-    <string name="add_item">Añadir producto</string>
-    <string name="enter_item">Introduce el nombre del producto</string>
-    <string name="hint_item">Introducir nombre</string>
-    <string name="quantity">Introducir cantidad</string>
+    <string name="app_name">Lista de la compra</string>
+    <string name="add_item">Añadir</string>
+    <string name="enter_item">Introduce un elemento</string>
+    <string name="hint_item">Introduce el nombre</string>
+    <string name="quantity">Introduce la cantidad</string>
     <string name="save_button">Guardar</string>
 
-    <string name="grocery_name">Lista de la compra</string>
+    <string name="grocery_name">Nombre de la lista</string>
     <string name="grocery_qty">Cantidad</string>
-    <string name="data_added">Fecha añadida</string>
-    <string name="action_settings">Opciones</string>
+    <string name="data_added">Fecha</string>
+    <string name="action_settings">Ajustes</string>
 </resources>
