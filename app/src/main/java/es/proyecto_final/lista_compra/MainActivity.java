@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     static ListViewAdapter adapter;
     static ArrayList<String> items;
     static Context context;
+    EditText cantidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input);
         enter = findViewById(R.id.add);
         context = getApplicationContext();
-
+        cantidad = findViewById(R.id.cantidad);
 
         // add hardcoded items to grocery list
         items = new ArrayList<>();
@@ -72,11 +73,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = input.getText().toString();
-                if (text == null || text.length() == 0) {
-                    makeToast("Introduce un artículo");
+                String cant = cantidad.getText().toString();//declaramos la cantidad
+                int intcant = Integer.parseInt(cant);//convertimos cantidad en Int
+                if (text == null || text.length() == 0 || cant == null) {
+                    makeToast("Rellene todos los campos");
                 } else {
-                    addItem(text);
+                    addItem(text +"  -- " + intcant);
                     input.setText("");
+                    cantidad.setText("");
                     makeToast(text + " añadido a la lista");
                 }
             }

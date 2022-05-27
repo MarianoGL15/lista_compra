@@ -28,6 +28,7 @@
             android:textColorHint="#5EFFFFFF"
             android:textCursorDrawable="@drawable/cursor"
             android:layout_gravity="left"
+            android:singleLine="false"
             />
 
         <EditText
@@ -42,7 +43,9 @@
             android:textColorHint="#5EFFFFFF"
             android:textCursorDrawable="@drawable/cursor"
             android:layout_marginTop="10sp"
-            android:layout_marginLeft="40sp"/>
+            android:layout_marginLeft="40sp"
+            android:inputType="number"
+            android:maxLength="3"/>
 
         <ImageView
             android:id="@+id/add"
