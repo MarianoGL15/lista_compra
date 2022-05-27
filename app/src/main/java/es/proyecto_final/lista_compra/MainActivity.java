@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     makeToast("Rellene todos los campos");
 
                 } else {
-                    addItem(text +"  -- " + intcant);
+                    addItem(text +"  -- " + "("+ intcant+")");
                     input.setText("");
                     cantidad.setText("");
                     makeToast(text + " añadido a la lista");

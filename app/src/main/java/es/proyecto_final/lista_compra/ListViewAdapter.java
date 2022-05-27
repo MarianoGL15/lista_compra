@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,6 +41,8 @@ class ListViewAdapter extends ArrayAdapter<String> {
             ImageView remove = convertView.findViewById(R.id.remove);
             ImageView copy = convertView.findViewById(R.id.copy);
             TextView number = convertView.findViewById(R.id.number);
+            EditText cantidad = convertView.findViewById(R.id.cantidad);
+            EditText input = convertView.findViewById(R.id.input);
 
             number.setText(position + 1 + ".");
             name.setText(list.get(position));
@@ -54,8 +57,16 @@ class ListViewAdapter extends ArrayAdapter<String> {
             });
             copy.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+               /* public void onClick(View view) {
                     MainActivity.addItem(list.get(position));
+                }*/
+                public void onClick(View view) {
+                    String text = input.getText().toString();
+                    String cant = cantidad.getText().toString();//declaramos la cantidad
+                    int intcant = Integer.parseInt(cant);//convertimos cantidad en Integer
+
+
+                    MainActivity.addItem(text +"  -- " + "("+ intcant++ +")");
                 }
             });
         }
