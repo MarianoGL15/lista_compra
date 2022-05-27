@@ -73,15 +73,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = input.getText().toString();
-<<<<<<< HEAD
+
                 String cant = cantidad.getText().toString();//declaramos la cantidad
                 int intcant = Integer.parseInt(cant);//convertimos cantidad en Int
                 if (text == null || text.length() == 0 || cant == null) {
                     makeToast("Rellene todos los campos");
-=======
-                if (text == null || text.length() == 0) { //Si esta vacio el campo cuando le das a añadir genera el texto
-                    makeToast("Introduce un artículo");
->>>>>>> 66ec3aa9197faa6fb44b4065c323155794205fab
+
                 } else {
                     addItem(text +"  -- " + intcant);
                     input.setText("");

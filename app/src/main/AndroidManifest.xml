@@ -11,6 +11,7 @@
         android:theme="@style/Theme.ListViews">
         <activity android:name="es.proyecto_final.lista_compra.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
