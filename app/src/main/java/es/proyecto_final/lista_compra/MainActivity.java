@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListViewAdapter(this, items);
         listView.setAdapter(adapter);
 
-        // Display the item name when the item's row is clicked
+        // Muestra el nombre del elento cuando le clicas
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, clickedItem, Toast.LENGTH_SHORT).show();
             }
         });
-        // Remove an item when its row is long pressed
+        // Cuando lo mantienes pulsado borra el elemento
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -68,15 +68,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // add item when the user presses the enter button
+        // Funcion para añadir un elemento a la lista
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = input.getText().toString();
+<<<<<<< HEAD
                 String cant = cantidad.getText().toString();//declaramos la cantidad
                 int intcant = Integer.parseInt(cant);//convertimos cantidad en Int
                 if (text == null || text.length() == 0 || cant == null) {
                     makeToast("Rellene todos los campos");
+=======
+                if (text == null || text.length() == 0) { //Si esta vacio el campo cuando le das a añadir genera el texto
+                    makeToast("Introduce un artículo");
+>>>>>>> 66ec3aa9197faa6fb44b4065c323155794205fab
                 } else {
                     addItem(text +"  -- " + intcant);
                     input.setText("");
@@ -88,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
         loadContent();
     }
 
-    // function to read grocery list from file and load it into ListView
+
+    //Lee la lista del fichero y lo muestra en LisView
     public void loadContent() {
         File path = getApplicationContext().getFilesDir();
         File readFrom = new File(path, "list.txt");
@@ -104,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             s = s.substring(1, s.length() - 1);
             String split[] = s.split(", ");
 
-            // There may be no items in the grocery list.
+            // Por si no hay nada en la lista
             if (split.length == 1 && split[0].isEmpty())
                 items = new ArrayList<>();
             else items = new ArrayList<>(Arrays.asList(split));
@@ -116,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Override onDestroy() to save the contents of the grocery list right before the app is terminated
+    //El override se utiliza para que no borre el contenido de la lista cuando se cierra la aplicacion
     @Override
     protected void onDestroy() {
         File path = getApplicationContext().getFilesDir();
@@ -130,20 +136,20 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    // function to remove an item given its index in the grocery list.
+    //Funcion para borrar un item
     public static void removeItem(int i) {
         makeToast( items.get(i) + " Eliminado");
         items.remove(i);
         listView.setAdapter(adapter);
     }
 
-    // function to add an item given its name.
+    // Funcion para añadir un item por el nombre introducido
     public static void addItem(String item) {
         items.add(item);
         listView.setAdapter(adapter);
     }
 
-    // function to make a Toast given a string
+    // Esta funcion genra los mensajes que salen abajo
     static Toast t;
 
     private static void makeToast(String s) {
