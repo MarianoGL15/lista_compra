@@ -42,7 +42,7 @@ class ListViewAdapter extends ArrayAdapter<String> {
             ImageView copy = convertView.findViewById(R.id.copy);
             TextView number = convertView.findViewById(R.id.number);
             EditText cantidad = convertView.findViewById(R.id.cantidad);
-            EditText input = convertView.findViewById(R.id.input);
+            EditText input = convertView.findViewById(R.id.producto);
 
             number.setText(position + 1 + ".");
             name.setText(list.get(position));
