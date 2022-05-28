@@ -16,9 +16,6 @@
             android:id="@+id/input"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
-
-            android:layout_gravity="left"
-
             android:layout_marginLeft="40sp"
             android:layout_marginTop="20sp"
             android:backgroundTint="#916bd2"
@@ -26,21 +23,31 @@
             android:hint="Introduce un artículo"
             android:textColor="#fff"
             android:textColorHint="#5EFFFFFF"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:textCursorDrawable="@drawable/cursor"
+            android:layout_gravity="left"
+            android:singleLine="false"
+            />
+
+
+
 
         <EditText
             android:id="@+id/cantidad"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/input"
-            android:layout_marginLeft="40sp"
-            android:layout_marginTop="10sp"
             android:backgroundTint="#916bd2"
             android:ems="10"
             android:hint="Cantidad de artículos"
             android:textColor="#fff"
             android:textColorHint="#5EFFFFFF"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:textCursorDrawable="@drawable/cursor"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="40sp"
+            android:inputType="number"
+            android:maxLength="3"/>
+
+
 
         <ImageView
             android:id="@+id/add"
