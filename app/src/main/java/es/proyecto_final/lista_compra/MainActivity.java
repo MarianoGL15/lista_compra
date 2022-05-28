@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     static ListView listView;
-    EditText input;
+    EditText producto;
     ImageView enter;
     static ListViewAdapter adapter;
     static ArrayList<String> items;
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.list);
-        input = findViewById(R.id.input);
-        enter = findViewById(R.id.add);
+        listView = findViewById(R.id.lista);
+        producto = findViewById(R.id.producto);
+        enter = findViewById(R.id.añadir);
         context = getApplicationContext();
         cantidad = findViewById(R.id.cantidad);
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = input.getText().toString();
+                String text = producto.getText().toString();
 
                 String cant = cantidad.getText().toString();//declaramos la cantidad
                 int intcant = Integer.parseInt(cant);//convertimos cantidad en Int
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     addItem(text +"  -- " + "("+ intcant+")");
-                    input.setText("");
+                    producto.setText("");
                     cantidad.setText("");
                     makeToast(text + " añadido a la lista");
                 }
