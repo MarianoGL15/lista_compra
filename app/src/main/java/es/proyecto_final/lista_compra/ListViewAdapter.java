@@ -55,12 +55,12 @@ class ListViewAdapter extends ArrayAdapter<String> {
                     MainActivity.removeItem(position);
                 }
             });
-            copy.setOnClickListener(new View.OnClickListener() {
+ /*           copy.setOnClickListener(new View.OnClickListener() {
                 @Override
                /* public void onClick(View view) {
                     MainActivity.addItem(list.get(position));
                 }*/
-                public void onClick(View view) {
+             /*   public void onClick(View view) {
                     String text = input.getText().toString();
                     String cant = cantidad.getText().toString();//declaramos la cantidad
                     int intcant = Integer.parseInt(cant);//convertimos cantidad en Integer
@@ -68,7 +68,7 @@ class ListViewAdapter extends ArrayAdapter<String> {
 
                     MainActivity.addItem(text +"  -- " + "("+ intcant++ +")");
                 }
-            });
+            });*/
         }
         return convertView;
     }
